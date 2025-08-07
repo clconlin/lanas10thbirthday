@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,15 +31,11 @@
     header{position:relative; overflow:hidden;}
     .hero{
       max-width:1100px; margin:0 auto; padding: clamp(20px, 4vw, 40px);
-      display:grid; grid-template-columns: 1.2fr 1fr; gap: clamp(16px, 3vw, 32px);
-      align-items:center;
+      display:grid; grid-template-columns: 1fr; gap: clamp(16px, 3vw, 32px);
+      align-items:center; text-align:left;
     }
-    @media (max-width: 840px){ .hero{grid-template-columns: 1fr; text-align:center;} }
 
-    .title{
-      font-size: clamp(28px, 4vw, 52px);
-      line-height:1.05; letter-spacing:-.02em; margin: 6px 0 10px 0;
-    }
+    .title{ font-size: clamp(28px, 4vw, 52px); line-height:1.05; letter-spacing:-.02em; margin: 6px 0 10px 0; }
     .subtitle{color:var(--muted); font-size: clamp(16px, 2.2vw, 20px);} 
 
     .badge{display:inline-flex; align-items:center; gap:8px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); color:#111; padding:8px 12px; border-radius:999px; font-weight:700; box-shadow: var(--shadow)}
@@ -56,30 +51,26 @@
     .btn.good{background: linear-gradient(135deg, #31d176, #2aa96f)}
     .btn.info{background: linear-gradient(135deg, var(--accent), var(--accent-2)); color:#111}
 
-    .art{position:relative; height: 320px; border-radius: 24px; background: radial-gradient(120% 120% at 10% 0%, #ffe3f3 0%, rgba(255,255,255,0) 50%), radial-gradient(130% 120% at 100% 0%, #dffbff 0%, rgba(255,255,255,0) 50%), var(--card); box-shadow: var(--shadow);}
+    .art{position:relative; height: 360px; border-radius: 24px; background: radial-gradient(120% 120% at 10% 0%, #ffe3f3 0%, rgba(255,255,255,0) 50%), radial-gradient(130% 120% at 100% 0%, #dffbff 0%, rgba(255,255,255,0) 50%), var(--card); box-shadow: var(--shadow);}
     [data-theme="dark"] .art{background: radial-gradient(120% 120% at 10% 0%, rgba(255,114,198,.25) 0%, rgba(255,255,255,0) 50%), radial-gradient(130% 120% at 100% 0%, rgba(124,241,255,.18) 0%, rgba(255,255,255,0) 50%), #120614;}
 
-    .float{position:absolute; display:grid; place-items:center; width:90px; height:90px; border-radius:24px; font-size:42px; box-shadow: var(--shadow); background:var(--card); border:1px solid rgba(0,0,0,.06); animation: bob 5s ease-in-out infinite;}
-    .f1{left:20px; top:20px; transform: rotate(-8deg)}
-    .f2{right:24px; top:34px; transform: rotate(6deg); animation-delay: .8s}
-    .f3{left:34%; bottom:20px; transform: rotate(-2deg); animation-delay: 1.4s}
+    .float{position:absolute; display:grid; place-items:center; width:90px; height:90px; border-radius:24px; font-size:42px; box-shadow: var(--shadow); background:var(--card); border:1px solid rgba(0,0,0,.06); animation: bob 5.5s ease-in-out infinite;}
+    .f1{left:16px; top:18px; --r:-8deg; animation-delay: .0s}
+    .f2{right:16px; top:28px; --r:6deg; animation-delay: .6s}
+    .f3{left:32%; bottom:18px; --r:-2deg; animation-delay: 1.2s}
+    .f4{right:28%; bottom:22px; --r:4deg; animation-delay: 1.8s}
+    .f5{left:62%; top:60px; --r:-5deg; animation-delay: 2.4s}
+    .f6{right:8%; bottom:70px; --r:3deg; animation-delay: 3.0s}
     @keyframes bob{0%,100%{transform: translateY(0) rotate(var(--r,0))}50%{transform: translateY(-10px) rotate(var(--r,0))}}
 
     main{max-width:1100px; margin:0 auto; padding: 0 clamp(20px, 4vw, 40px) 40px}
 
-    .grid{display:grid; grid-template-columns: 1fr 1fr; gap: clamp(16px, 3vw, 28px)}
-    @media (max-width: 900px){ .grid{grid-template-columns: 1fr} }
+    .grid{display:grid; grid-template-columns: 1fr; gap: clamp(16px, 3vw, 28px)}
 
     .card{background:var(--card); border:1px solid rgba(0,0,0,.06); border-radius:18px; padding:18px; box-shadow: var(--shadow)}
     h2{margin: 8px 0 12px 0; font-size: clamp(22px, 3vw, 28px)}
     .muted{color:var(--muted)}
     .list{margin:0; padding-left: 18px}
-
-    .fav-wrap{display:grid; grid-template-columns: repeat(6, minmax(100px, 1fr)); gap:12px}
-    @media (max-width: 720px){ .fav-wrap{grid-template-columns: repeat(3, minmax(100px, 1fr))} }
-    .fav{background: linear-gradient(180deg, rgba(255,255,255,.6), rgba(255,255,255,.3)); padding:14px; border-radius:16px; text-align:center; box-shadow: var(--shadow); border:1px solid rgba(0,0,0,.06); transition: transform .12s ease}
-    .fav:hover{transform: translateY(-3px)}
-    .fav .emoji{font-size: 36px; display:block; margin-bottom:6px}
 
     .rsvp form{display:grid; gap:10px}
     .row{display:grid; grid-template-columns: 1fr 1fr; gap:10px}
@@ -130,16 +121,11 @@
           </div>
           <p class="muted" style="margin-top:10px">Tip: please arrive 10 minutes early for check-in. Grip socks are often required at inflatable parks—check the venue guidelines.</p>
         </div>
-        <div class="art" aria-hidden="true">
-          <div class="float f1" style="--r:-8deg">🤸‍♀️</div>
-          <div class="float f2" style="--r:6deg">🎮</div>
-          <div class="float f3" style="--r:-2deg">🧸</div>
-        </div>
       </section>
     </header>
 
     <main>
-      <section class="grid" aria-label="Highlights and favourites">
+      <section class="grid" aria-label="Event details">
         <div class="card">
           <h2>What to expect</h2>
           <p>We’ll bounce, climb and play at Innoflate, then celebrate Lana turning 10 with friends. There’ll be time for snacks, cake and photos near the end.</p>
@@ -150,20 +136,9 @@
           </ul>
           <div class="notice" style="margin-top:10px">Please RSVP by <strong>15 August</strong>. Questions or special requirements? Pop them in the RSVP form and we’ll be in touch.</div>
         </div>
-        <div class="card">
-          <h2>Lana's favourite things</h2>
-          <div class="fav-wrap">
-            <div class="fav" title="Gymnastics"><span class="emoji">🤸‍♀️</span>Gymnastics</div>
-            <div class="fav" title="Roblox"><span class="emoji">🎮</span>Roblox</div>
-            <div class="fav" title="Skincare &amp; Makeup"><span class="emoji">💄</span>Skincare &amp; Makeup</div>
-            <div class="fav" title="iPhone"><span class="emoji">📱</span>iPhone</div>
-            <div class="fav" title="Squishmallows"><span class="emoji">🧸</span>Squishmallows</div>
-            <div class="fav" title="Labubu"><span class="emoji">👾</span>Labubus</div>
-          </div>
-        </div>
       </section>
 
-      <section id="rsvp" class="grid" aria-label="RSVP and details" style="margin-top:16px">
+      <section id="rsvp" class="grid" aria-label="RSVP" style="margin-top:16px">
         <div class="card rsvp">
           <h2>RSVP</h2>
           <p class="muted">Please RSVP by <strong>15 August</strong> if you can. The form will prepare an email to the host with your details.</p>
@@ -219,15 +194,18 @@
             <div id="rsvpMsg" class="muted" role="status" style="margin-top:6px"></div>
           </form>
         </div>
+      </section>
+
+      <!-- Floating icons moved to a bottom card; Useful Links removed -->
+      <section class="grid" aria-label="Fun" style="margin-top:16px">
         <div class="card">
-          <h2>Useful links</h2>
-          <p>
-            <a class="btn alt" href="https://www.google.com/maps/search/?api=1&query=Innoflate%20Cumbernauld" target="_blank" rel="noopener">🗺️ Innoflate on Maps</a>
-          </p>
-          <p class="muted">Add the event to your calendar or share this invite with friends and family.</p>
-          <div class="cta">
-            <button class="btn info" id="addCal2">📅 Add to Calendar</button>
-            <button class="btn" id="shareBtn2">🔗 Share</button>
+          <div class="art" aria-label="Decorative floating icons">
+            <div class="float f1" title="Gymnastics">🤸‍♀️</div>
+            <div class="float f2" title="Roblox">🎮</div>
+            <div class="float f3" title="Squishmallows">🧸</div>
+            <div class="float f4" title="Skincare & Makeup">💄</div>
+            <div class="float f5" title="iPhone">📱</div>
+            <div class="float f6" title="Labubus">👾</div>
           </div>
         </div>
       </section>
@@ -285,7 +263,6 @@ Map: https://www.google.com/maps/search/?api=1&query=Innoflate%20Cumbernauld`;
       if(navigator.share){ navigator.share(shareData); } else { navigator.clipboard.writeText(location.href); alert('Link copied!'); }
     }
     document.getElementById('shareBtn').addEventListener('click', doShare);
-    document.getElementById('shareBtn2').addEventListener('click', doShare);
 
     // Add to calendar (.ics)
     function downloadICS(){
@@ -311,7 +288,6 @@ END:VCALENDAR`;
       confettiBurst();
     }
     document.getElementById('addCal').addEventListener('click', downloadICS);
-    document.getElementById('addCal2').addEventListener('click', downloadICS);
 
     // RSVP form (mailto)
     const form = document.getElementById('rsvpForm');
