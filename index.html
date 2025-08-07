@@ -1,12 +1,13 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Lana's 10th Birthday – Invite</title>
-  <meta name="description" content="You're invited to Lana's 10th birthday at Innoflate, Cumbernauld! Sat 17 Aug, 2:00–3:00pm." />
+  <meta name="description" content="You're invited to Lana's 10th birthday at Innoflate, Cumbernauld! Sun 24 Aug, 11:00am–1:00pm." />
   <meta property="og:title" content="Lana's 10th Birthday – You're Invited!" />
-  <meta property="og:description" content="Sat 17 Aug, 2:00–3:00pm at Innoflate, Cumbernauld. Tap to RSVP, add to calendar, and get directions." />
+  <meta property="og:description" content="Sun 24 Aug, 11:00am–1:00pm at Innoflate, Cumbernauld. Tap to WhatsApp RSVP, add to calendar, and get directions." />
   <meta property="og:type" content="website" />
   <meta name="theme-color" content="#ffb3d6" />
   <style>
@@ -29,11 +30,7 @@
     .app{min-height:100dvh; display:grid; grid-template-rows:auto auto 1fr auto;}
 
     header{position:relative; overflow:hidden;}
-    .hero{
-      max-width:1100px; margin:0 auto; padding: clamp(20px, 4vw, 40px);
-      display:grid; grid-template-columns: 1fr; gap: clamp(16px, 3vw, 32px);
-      align-items:center; text-align:left;
-    }
+    .hero{ max-width:1100px; margin:0 auto; padding: clamp(20px, 4vw, 40px); display:grid; grid-template-columns: 1fr; gap: clamp(16px, 3vw, 32px); align-items:center; text-align:left; }
 
     .title{ font-size: clamp(28px, 4vw, 52px); line-height:1.05; letter-spacing:-.02em; margin: 6px 0 10px 0; }
     .subtitle{color:var(--muted); font-size: clamp(16px, 2.2vw, 20px);} 
@@ -106,18 +103,18 @@
         <div>
           <span class="badge"><span class="spark">✨</span> You're invited!</span>
           <h1 class="title">Lana's 10th Birthday at Innoflate</h1>
-          <p class="subtitle">Saturday 17 August, 2:00–3:00pm • Innoflate, Cumbernauld (Glasgow)</p>
+          <p class="subtitle">Sunday 24 August, 11:00am–1:00pm • Innoflate, Cumbernauld (Glasgow)</p>
           <div class="chipset" aria-label="Event details">
             <span class="chip">📍 Innoflate Cumbernauld</span>
-            <span class="chip">🗓️ Sat 17 Aug 2025</span>
-            <span class="chip">⏰ 2:00–3:00pm</span>
+            <span class="chip">🗓️ Sun 24 Aug 2025</span>
+            <span class="chip">⏰ 11:00am–1:00pm</span>
             <span class="chip">🎉 Turning 10!</span>
           </div>
           <div class="timer" id="timer" role="timer" aria-live="polite"></div>
           <div class="cta">
             <button class="btn info" id="addCal">📅 Add to Calendar</button>
             <a class="btn alt" href="https://www.google.com/maps/search/?api=1&query=Innoflate%20Cumbernauld" target="_blank" rel="noopener">🗺️ Get Directions</a>
-            <a class="btn" href="#rsvp">✉️ RSVP</a>
+            <a class="btn" id="waQuick" href="#rsvp">💬 WhatsApp RSVP</a>
           </div>
           <p class="muted" style="margin-top:10px">Tip: please arrive 10 minutes early for check-in. Grip socks are often required at inflatable parks—check the venue guidelines.</p>
         </div>
@@ -130,7 +127,7 @@
           <h2>What to expect</h2>
           <p>We’ll bounce, climb and play at Innoflate, then celebrate Lana turning 10 with friends. There’ll be time for snacks, cake and photos near the end.</p>
           <ul class="list">
-            <li>When: <strong>Sat 17 Aug 2025, 2:00–3:00pm</strong> (arrive from 1:50pm)</li>
+            <li>When: <strong>Sun 24 Aug 2025, 11:00am–1:00pm</strong> (arrive from 10:50am)</li>
             <li>Where: <strong>Innoflate Cumbernauld</strong>, Glasgow</li>
             <li>Bring: comfy clothes, water bottle, and <em>grip socks if you have them</em></li>
           </ul>
@@ -138,16 +135,22 @@
         </div>
       </section>
 
-      <section id="rsvp" class="grid" aria-label="RSVP" style="margin-top:16px">
+      <section id="rsvp" class="grid" aria-label="RSVP via WhatsApp" style="margin-top:16px">
         <div class="card rsvp">
-          <h2>RSVP</h2>
-          <p class="muted">Please RSVP by <strong>15 August</strong> if you can. The form will prepare an email to the host with your details.</p>
+          <h2>RSVP via WhatsApp</h2>
+          <p class="muted">Fill in your details and we’ll open a WhatsApp chat to the host with everything pre‑filled. If you do not have WhatsApp text me directly on <strong>07709494555</strong></p>
           <form id="rsvpForm">
             <div class="row">
               <div>
                 <label for="guestName">Your name</label>
                 <input id="guestName" name="guestName" placeholder="e.g., Alex" required />
               </div>
+              <div>
+                <label for="childName">Child's name</label>
+                <input id="childName" name="childName" placeholder="e.g., Jamie" required />
+              </div>
+            </div>
+            <div class="row">
               <div>
                 <label for="status">Can you make it?</label>
                 <select id="status" name="status">
@@ -156,47 +159,30 @@
                   <option>Maybe</option>
                 </select>
               </div>
-            </div>
-            <div class="row">
               <div>
                 <label for="kids">No. of children attending</label>
                 <input id="kids" name="kids" type="number" min="0" value="1" />
-              </div>
-              <div>
-                <label for="adults">No. of adults</label>
-                <input id="adults" name="adults" type="number" min="0" value="1" />
               </div>
             </div>
             <div class="row">
               <div>
                 <label for="contact">Contact (email or phone)</label>
-                <input id="contact" name="contact" placeholder="you@example.com" />
+                <input id="contact" name="contact" placeholder="you@example.com / +44…" />
               </div>
               <div>
                 <label for="diet">Dietary needs</label>
                 <input id="diet" name="diet" placeholder="e.g., nut-free, vegetarian" />
               </div>
             </div>
-            <div>
-              <label for="notes">Notes</label>
-              <textarea id="notes" name="notes" placeholder="Anything we should know?"></textarea>
-            </div>
-            <div class="row">
-              <div>
-                <label for="hostEmail">Host email (for replies)</label>
-                <input id="hostEmail" name="hostEmail" value="clint.conlin@outlook.com" />
-              </div>
-              <div style="display:flex; align-items:end; gap:8px">
-                <button type="submit" class="btn good">📨 Send RSVP</button>
-                <button type="button" id="saveHost" class="btn alt">💾 Save host</button>
-              </div>
+            <div style="display:flex; align-items:end; gap:8px">
+              <button type="submit" class="btn good">💬 Send on WhatsApp</button>
             </div>
             <div id="rsvpMsg" class="muted" role="status" style="margin-top:6px"></div>
           </form>
         </div>
       </section>
 
-      <!-- Floating icons moved to a bottom card; Useful Links removed -->
+      <!-- Floating icons card at the bottom -->
       <section class="grid" aria-label="Fun" style="margin-top:16px">
         <div class="card">
           <div class="art" aria-label="Decorative floating icons">
@@ -229,7 +215,7 @@
 
     // Timer to event
     const timerEl = document.getElementById('timer');
-    const eventLocal = new Date('2025-08-17T14:00:00+01:00'); // Europe/London BST
+    const eventLocal = new Date('2025-08-24T11:00:00+01:00'); // Europe/London BST
     function updateTimer(){
       const now = new Date();
       let diff = Math.max(0, eventLocal - now);
@@ -249,7 +235,7 @@
     // Copy details
     const copyBtn = document.getElementById('copyBtn');
     const details = `Lana's 10th Birthday
-When: Sat 17 Aug 2025, 2:00–3:00pm
+When: Sun 24 Aug 2025, 11:00am–1:00pm
 Please RSVP by 15 August
 Where: Innoflate Cumbernauld (Glasgow)
 Map: https://www.google.com/maps/search/?api=1&query=Innoflate%20Cumbernauld`;
@@ -259,14 +245,14 @@ Map: https://www.google.com/maps/search/?api=1&query=Innoflate%20Cumbernauld`;
 
     // Share
     function doShare(){
-      const shareData = { title: "Lana's 10th Birthday", text: "Join us at Innoflate, Sat 17 Aug, 2–3pm!", url: location.href };
+      const shareData = { title: "Lana's 10th Birthday", text: "Join us at Innoflate, Sun 24 Aug, 11am–1pm!", url: location.href };
       if(navigator.share){ navigator.share(shareData); } else { navigator.clipboard.writeText(location.href); alert('Link copied!'); }
     }
     document.getElementById('shareBtn').addEventListener('click', doShare);
 
     // Add to calendar (.ics)
     function downloadICS(){
-      // Event is 14:00–15:00 BST (UTC+1) => 13:00–14:00Z
+      // Event is 11:00–13:00 BST (UTC+1) => 10:00–12:00Z
       const ics = `BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:-//Lana10//Invite//EN
@@ -275,8 +261,8 @@ METHOD:PUBLISH
 BEGIN:VEVENT
 UID:${Date.now()}@lana10
 DTSTAMP:${new Date().toISOString().replace(/[-:]/g,'').split('.')[0]}Z
-DTSTART:20250817T130000Z
-DTEND:20250817T140000Z
+DTSTART:20250824T100000Z
+DTEND:20250824T120000Z
 SUMMARY:Lana's 10th Birthday at Innoflate
 LOCATION:Innoflate Cumbernauld, Glasgow, UK
 DESCRIPTION:Join us to celebrate Lana turning 10!
@@ -289,34 +275,39 @@ END:VCALENDAR`;
     }
     document.getElementById('addCal').addEventListener('click', downloadICS);
 
-    // RSVP form (mailto)
-    const form = document.getElementById('rsvpForm');
-    const hostInput = document.getElementById('hostEmail');
-    const saveHostBtn = document.getElementById('saveHost');
-    const msg = document.getElementById('rsvpMsg');
-    const savedHost = localStorage.getItem('hostEmail');
-    if(savedHost){ hostInput.value = savedHost; }
-    saveHostBtn.addEventListener('click', ()=>{
-      if(hostInput.value){ localStorage.setItem('hostEmail', hostInput.value); msg.textContent = 'Host email saved.'; setTimeout(()=> msg.textContent='', 2000);} else { msg.textContent='Please enter a host email.'; }
-    });
+    // ===== WhatsApp RSVP (hard-coded host number) =====
+    const HOST_WHATSAPP = '447709494555'; // +44 removed for wa.me format
+    function buildWAText(data){
+      return encodeURIComponent(
+        `RSVP for Lana's 10th (Sun 24 Aug, 11:00am–1:00pm)
+`+
+        `Parent/Guardian: ${data.guestName}
+`+
+        `Child: ${data.childName}
+`+
+        `Status: ${data.status}
+`+
+        `Children attending: ${data.kids || 0}
+`+
+        `Contact: ${data.contact || ''}
+`+
+        `Dietary: ${data.diet || ''}`
+      );
+    }
 
+    const form = document.getElementById('rsvpForm');
+    const msg = document.getElementById('rsvpMsg');
     form.addEventListener('submit', (e)=>{
       e.preventDefault();
       const data = Object.fromEntries(new FormData(form));
-      const to = (data.hostEmail || 'clint.conlin@outlook.com').trim();
-      const subject = encodeURIComponent("RSVP: Lana's 10th (17 Aug, 2–3pm)");
-      const body = encodeURIComponent(`Name: ${data.guestName}
-Status: ${data.status}
-Children: ${data.kids || 0}
-Adults: ${data.adults || 0}
-Contact: ${data.contact || ''}
-Dietary: ${data.diet || ''}
-Notes: ${data.notes || ''}`);
-      const mailto = `mailto:${to}?subject=${subject}&body=${body}`;
-      window.location.href = mailto;
-      msg.textContent = 'Opening your email app…';
-      confettiBurst();
+      const text = buildWAText(data);
+      const url = `https://wa.me/${HOST_WHATSAPP}?text=${text}`;
+      try { window.open(url, '_blank'); msg.textContent = 'Opening WhatsApp…'; confettiBurst(); }
+      catch(err){ navigator.clipboard.writeText(url); msg.textContent='Could not open WhatsApp. Link copied—paste into your browser or WhatsApp.'; }
     });
+
+    // Optional: hero CTA scrolls to form (kept default)
+    document.getElementById('waQuick').addEventListener('click', ()=>{});
 
     // Confetti
     const canvas = document.getElementById('confetti');
@@ -341,7 +332,6 @@ Notes: ${data.notes || ''}`);
       step();
       setTimeout(()=> confetti = [], 3500);
     }
-    // launch once on load
     setTimeout(()=> confettiBurst(200), 400);
   </script>
 </body>
