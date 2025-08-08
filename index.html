@@ -138,7 +138,7 @@
       <section id="rsvp" class="grid" aria-label="RSVP via WhatsApp" style="margin-top:16px">
         <div class="card rsvp">
           <h2>RSVP via WhatsApp</h2>
-          <p class="muted">Fill in your details and we’ll open a WhatsApp chat to the host with everything pre‑filled. If you do not have WhatsApp text me directly on <strong>07709494555</strong></p>
+          <p class="muted">Fill in your details and we’ll open a WhatsApp chat to the host with everything pre‑filled. If you do not have WhatsApp text me directly on <strong>0123456789</strong></p>
           <form id="rsvpForm">
             <div class="row">
               <div>
@@ -276,7 +276,7 @@ END:VCALENDAR`;
     document.getElementById('addCal').addEventListener('click', downloadICS);
 
     // ===== WhatsApp RSVP (hard-coded host number) =====
-    const HOST_WHATSAPP = '447709494555'; // +44 removed for wa.me format
+    const HOST_WHATSAPP = '44123456789'; // +44 removed for wa.me format
     function buildWAText(data){
       return encodeURIComponent(
         `RSVP for Lana's 10th (Sun 24 Aug, 11:00am–1:00pm)
